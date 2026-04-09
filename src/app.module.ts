@@ -6,6 +6,9 @@ import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/postagem.modules';
 import { Tema } from './tema/entities/tema.entity';
 import { TemaModule } from './tema/tema.module';
+import { AuthModule } from './auth/auth.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { Usuario } from './usuario/entities/usuario.entity';
 
 @Module({
   imports: [
@@ -16,11 +19,13 @@ import { TemaModule } from './tema/tema.module';
       username: 'root', //usuário do banco de dados
       password: 'root', //senha do banco de dados
       database: 'db_blogpessoal', //nome do banco de dados
-      entities: [Postagem, Tema],
+      entities: [Postagem, Tema, Usuario],
       synchronize: true,
     })
-    , PostagemModule
+    ,PostagemModule
     ,TemaModule
+    ,AuthModule
+    ,UsuarioModule
   ],
   controllers: [AppController],
   providers: [AppService],
