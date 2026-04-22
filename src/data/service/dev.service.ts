@@ -6,17 +6,16 @@ import { Usuario } from "../../usuario/entities/usuario.entity";
 
 @Injectable()
 export class DevService implements TypeOrmOptionsFactory {
-
-    createTypeOrmOptions (): TypeOrmModuleOptions {
+    createTypeOrmOptions(): TypeOrmModuleOptions {
         return {
             type: 'mysql',
             host: 'localhost',
             port: 3306,
             username: 'root',
-            password: 'root',
+            password: 'JOAO@123',
             database: 'db_blogpessoal',
             entities: [Postagem, Tema, Usuario],
-            synchronize: true
+            synchronize: true,
         };
     }
 }
